@@ -1,0 +1,25 @@
+#工程名
+project(demo)
+
+#cmake最低版本要求
+cmake_minimum_required(VERSION 2.8.3)
+
+#设置调试模式
+set(CMAKE_BUILD_TYPE Debug)
+
+#确定需要的头文件
+include_directories(
+	include
+)
+
+#确定编译语言
+set(CMAKE_CXX_STANDARD 11)
+
+#设置二进制目录
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+
+#设置需要运行的库
+add_executable(demo src/main.cpp)
